@@ -4,14 +4,14 @@ import inspect
 from exercises.python101 import *
 
 
-# There's no need to change these tests.
-class TestExercise1_1_2_1:
+# No need to change these tests.
+class TestExercise_P1:
 
     def test_foo(self):
         assert foo(), "Method foo() should return the value True"
 
 
-class TestExercise1_1_3_1:
+class TestExercise_P2:
 
     @pytest.mark.parametrize("a,b,c", [(5, 8, 13), (5.5, 8.5, 14.), ("ab", "cd", "abcd")])
     def test_plus(self, a, b, c):
@@ -21,7 +21,7 @@ class TestExercise1_1_3_1:
                         "Should have returned {}, but returned {}".format(a, b, c, result))
 
 
-class TestExercise1_1_3_2:
+class TestExercise_P3:
 
     @pytest.mark.parametrize("frogs, clutch, color", [(1, -1, "blue"), (1, 0.5, "green"), (-3, -1.5, "white"),
                                                       (1, -0.5, "blue"), (-1, -0.5, "red"), (-1, -1.5, "black")])
@@ -32,7 +32,7 @@ class TestExercise1_1_3_2:
                         "should have returned {}, but it returned {}.".format(frogs, clutch, color, result))
 
 
-class TestExercise1_1_4_1:
+class TestExercise_P4:
 
     @pytest.mark.parametrize("x, y", [(5, 5), (7, 16), (19, 20)])
     def test_collatz(self, x, y):
@@ -42,7 +42,7 @@ class TestExercise1_1_4_1:
                         "but it returned {}.".format(x, y, result))
 
 
-class TestExercise1_1_4_2:
+class TestExercise_P5:
     @pytest.mark.parametrize("x, y", [(5, 5), (7.5, 16), (-2, None), ("Ffdfd", None)])
     def test_typed_collatz(self, x, y):
         for x, y in [(5, 5), (7.5, 16), (-2, None), ("Ffdfd", None)]:
@@ -53,8 +53,10 @@ class TestExercise1_1_4_2:
                                                                                                                  result))
 
 
-class TestExercise1_1_5_1:
-
+class TestExercise_P6:
+    """
+    Tests the exercise on function even_steven;
+    """
     def test_for_e(selfself):
         assert even_steven("This hovercraft is full of eels.") == "hshvrrf sfl fel.", "Not quite the right answer."
 
@@ -63,7 +65,7 @@ class TestExercise1_1_5_1:
             pytest.fail("The method even_steven() should contain a for loop!")
 
 
-class TestExercise1_1_5_2:
+class TestExercise_P7:
 
     @pytest.mark.parametrize("x, y", [("Hello", "Heelloe"),
                                       (
@@ -75,7 +77,7 @@ class TestExercise1_1_5_2:
                         "'{}', but it returned '{}'.".format(x, y, result))
 
 
-class TestExercise1_1_5_3:
+class TestExercise_P8:
     @pytest.mark.parametrize("x, y", [("Yes, sure is", "No! Ooooh! Yeees, sueree ies"),
                                       ("What do you mean?", "None of your business. ")])
     def test_reply_argument(self, x, y):
